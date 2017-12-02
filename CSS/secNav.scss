@@ -1,0 +1,232 @@
+/*
+//////////////////////////
+//  Author: Fran Rives  //
+//////////////////////////
+*/
+
+.secNav {
+    position: relative;
+    left: 0;
+    height: 28px;
+    font-style: italic;
+    font-size: 16px;
+    background-color: $lightNeutral3;
+    /*box-shadow: 0px 3px 12px 0px rgba(13, 12, 11, 0.5);*/
+    text-align: right;
+    button {
+        display: inline-block;
+        color: $neutralBlueDark;
+        font-family: 'PT Sans', 'sans-serif';
+        font-style: italic;
+        font-size: 16px;
+        &:visited {
+            color: $neutralBlueDark;
+        }
+        &:hover {
+            color: $almostWhite;
+            font-weight: bold;
+        }
+    }
+    .user {
+        float: left;
+        width: 370px;
+        margin-top: 4px;
+        button {
+            overflow: visible; // So IE renders the ::after element.
+            &:nth-child(2) {
+                margin-left: 28px;
+            }
+        }
+        // As the after content has the same text as the original buttons but hovered, we're 'reserving' the space for the bold state on hover.
+        button::after {
+            display: block;
+            content: attr(data-text);
+            font-weight: bold;
+            height: 1px;
+            color: transparent;
+            overflow: hidden;
+            visibility: hidden;
+            margin-bottom: -1px;
+        }
+    }
+    .welcome {
+        position: absolute;
+        display: none;
+        color: $neutralBlueDark;
+        width: 370px;
+        margin-top: 4px;
+        margin-left: 22px;
+        span {
+            display: inline-block;
+        }
+        button {
+            float: right;
+            margin-left: 5px;
+        }
+        button::after {
+            display: block;
+            content: attr(data-text);
+            font-weight: bold;
+            height: 1px;
+            color: transparent;
+            overflow: hidden;
+            visibility: hidden;
+            margin-bottom: -1px;
+        }
+    }
+    .cart {
+        float: left;
+        margin-left: 69px;
+        button:hover {
+            svg {
+                fill: $almostWhite;
+            }
+            div > div {
+                background-color: $neutralBlueDark;
+            }
+        }
+        span {
+            float: left;
+            margin-top: 4px;
+            margin-right: 5px;
+            &::after {
+                display: block;
+                content: attr(data-text);
+                font-weight: bold;
+                height: 1px;
+                color: transparent;
+                overflow: hidden;
+                visibility: hidden;
+                margin-bottom: -1px;
+            }
+        }
+        .graphic {
+            display: inline-block;
+            margin-top: 3px;
+            svg {
+                float: left;
+                width: 22px;
+                height: 22px;
+                fill: $neutralBlueDark;
+                position: relative; // So it goes above the ellipsis.
+            }
+            div {
+                float: left;
+                background-color: $superHighlight;
+                width: 26px;
+                height: 19px;
+                margin-top: 2px;
+                margin-left: -4px;
+                border-radius: 13px / 9px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: bold;
+                font-size: 16px;
+                font-style: normal;
+                text-align: center;
+            }
+        }
+    }
+    .search {
+        float: left;
+        margin-left: 101px - 15px;
+        padding-left: 15px;
+        padding-right: 19px;
+        /*margin-top: 3px;*/
+        padding-top: 3px;
+        border-radius: 14.5px 14.5px 0 0;
+        background-color: $neutralGreenLight;
+        & > label:first-child {
+            float: left;
+            display: block;
+            input:first-child {
+                display: none;
+            }
+            svg {
+                width: 22px;
+                height: 22px;
+                fill: $neutralBlueDark;
+                cursor: pointer;
+            }
+        }
+        & > input {
+            float: left;
+            margin-left: 4px;
+            width: 185px;
+            height: 22px;
+            border-radius: 6px;
+            border: 1px solid $neutralBlueDark;
+            background-color: $almostWhite;
+            padding-left: 18px;
+            padding-right: 27px;
+            font-family: 'PT Sans', 'sans-serif';
+            font-style: italic;
+            font-size: 14px;
+            &:focus {
+                outline: none;
+                border: 1px solid $superHighlight;
+                background-color: $neutralBlueDark;
+                color: $lightNeutral3;
+                font-weight: bold;
+            }
+        }
+        // Sets the style of the placeholder text.
+        ::-webkit-input-placeholder {
+            color: $lightNeutral3;
+            font-weight: normal;
+        }
+        ::-moz-placeholder {
+            color: $lightNeutral3;
+            font-weight: normal;
+        }
+        :-ms-input-placeholder {
+            color: $lightNeutral3;
+            font-weight: normal;
+        }
+        // Removes the default border that appears when focusing in.
+        input:focus::-webkit-input-placeholder {
+            opacity: 0;
+        }
+        input:focus::-moz-placeholder {
+            opacity: 0;
+        }
+        input:focus:-ms-input-placeholder {
+            opacity: 0;
+        }
+        // Removes the cross from the search field on Chrome.
+        input[type="search"]::-webkit-search-decoration,
+        input[type="search"]::-webkit-search-cancel-button,
+        input[type="search"]::-webkit-search-results-button,
+        input[type="search"]::-webkit-search-results-decoration {
+            display: none;
+        }
+        // Removes the cross from the search field on IE.
+        input[type="search"]::-ms-clear {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+        input[type="search"]::-ms-reveal {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+        button {
+            display: block;
+            float: left;
+            width: 28px;
+            height: 22px;
+            background-color: rgba(25, 52, 65, 1);
+            border-radius: 0 6px 6px 0;
+            margin-left: -28px;
+            text-align: center;
+            svg {
+                position: relative;
+                width: 17px;
+                height: 17px;
+                margin-top: 2px;
+                margin-left: -1px;
+                fill: $almostWhite;
+            }
+        }
+    }
+}

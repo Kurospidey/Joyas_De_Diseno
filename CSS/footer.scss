@@ -1,0 +1,95 @@
+footer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    margin-top: 164px;
+    height: 369px;
+    background-image: url('../Photos/Maps/Map1024.png');
+    background-position: center;
+    svg {
+        position: absolute;
+        height: 58px;
+        width: 58px;
+        fill: $darkNeutral3;
+        opacity: 0.5;
+        top: calc(50% - 58px);
+        left: calc(50% - 58px / 2);
+    }
+    span {
+        position: absolute;
+        text-align: left;
+        top: calc(50% - 10px);
+        left: calc(50% + 10px);
+        font-family: 'Roboto', 'sans-serif';
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 20px;
+        color: $darkNeutral3;
+        opacity: 0.5;
+    }
+    .footerNav {
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+        height: 44px;
+        background-color: rgba(13, 12, 11, 0.5);
+        div {
+            display: inline-block;
+            height: 100%;
+            button, a {
+                /*border: 1px solid rgba(255, 0, 0, 1);*/
+                display: inline-block;
+                position: relative;
+                /*height: 34px;*/
+                top: (44px - 32px) / 2;
+                img:nth-of-type(1) {
+                    position: absolute;
+                    transition: all 0.5s;
+                }
+                img:nth-of-type(2) {
+                    opacity: 0;
+                    transition: all 0.5s;
+                }
+                &:hover > img:nth-of-type(1) {
+                    opacity: 0;
+                }
+                &:hover > img:nth-of-type(2) {
+                    opacity: 1;
+                }
+            }
+            &:nth-of-type(1) {
+                float: left;
+                width: 400px;
+                text-align: left;
+            }
+            &:nth-of-type(2) {
+                width: 100px;
+                text-align: center;
+            }
+            &:nth-of-type(3) {
+                float: right;
+                width: 400px;
+                text-align: right;
+            }
+        }
+        div:nth-of-type(1) > button:nth-of-type(1) {
+            left: 39px;
+            /*width: 46px;*/
+        }
+        div:nth-of-type(1) > button:nth-of-type(2) {
+            /*width: 52px;*/
+            left: 48px;
+        }
+        div:nth-of-type(2) > button {
+            /*width: 49px;*/
+        }
+        div:nth-of-type(3) > a:nth-of-type(1) {
+            /*width: 20px;*/
+            right: 39px + 9px;
+        }
+        div:nth-of-type(3) > a:nth-of-type(2) {
+            /*width: 39px;*/
+            right: 39px;
+        }
+    }
+}

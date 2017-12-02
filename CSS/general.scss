@@ -1,0 +1,92 @@
+/*
+//////////////////////////
+//  Author: Fran Rives  //
+//////////////////////////
+*/
+
+@import 'colors';
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: $highlight2;
+    color: $darkNeutral3;
+}
+
+::-moz-selection {
+    background-color: $highlight2;
+    color: $darkNeutral3;
+}
+
+// Removes the outline the buttons or anchors show when clicking or tabbing in Firefox.
+:focus {
+    outline: none;
+}
+::-moz-focus-inner {
+    border: 0;
+}
+// The same as before but for Chrome.
+button, a {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: $almostWhite;
+}
+
+.body {
+    position: absolute; // To fix Firefox scrolling the body (or the html) element on keydown or keyup (not obeying the e.preventDefault sentence).
+    overflow: hidden;
+    width: 100%;
+    color: $main;
+    font-family: 'PT Sans', sans-serif;
+    visibility: hidden;
+    text-align: center;
+}
+
+// Styles the markers for the mousedown, out of page scrolling.
+.topMarker, .bottomMarker, .leftMarker, .rightMarker {
+    display: inline-block;
+    position: fixed;
+    /*border: 1px solid red;*/
+}
+
+.topMarker, .bottomMarker {
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 4px;
+}
+
+.bottomMarker {
+    bottom: 0;
+}
+
+.leftMarker, .rightMarker {
+    top: 0;
+    z-index: 2;
+    height: 100%;
+    width: 4px;
+}
+
+.leftMarker {
+    left: 0;
+}
+
+.rightMarker {
+    right: 0;
+}

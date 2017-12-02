@@ -1,0 +1,30 @@
+/*
+//////////////////////////
+//  Author: Fran Rives  //
+//////////////////////////
+*/
+
+// COMPUTERS
+@media screen {
+    .mainNav > ul {
+        width: percentage(982 / 1004);
+    }
+    .secNav {
+        width: 100%;
+        & > .user {
+            margin-left: 22px;
+        }
+    }
+    .content {
+        width: 960px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .mainNav > ul {
+        width: 960px + 22px;
+    }
+    .secNav {
+        width: 1004px;
+    }
+}

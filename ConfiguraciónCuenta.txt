@@ -1,0 +1,24 @@
+Datos Personales:
+	Nombre
+	Apellidos
+	Fecha de nacimiento
+	Sexo
+	
+Datos de contacto
+	Dirección
+	Localidad
+	Provincia
+	Código Postal
+	Número de teléfono
+
+Datos de pago
+	Método de pago
+		Tarjeta de crédito (VISA, MasterCard)
+			Número
+			Fecha de caducidad
+			Código de seguridad
+
+		Contra-reembolso
+
+		PayPal
+			

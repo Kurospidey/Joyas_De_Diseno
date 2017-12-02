@@ -1,0 +1,276 @@
+/*
+//////////////////////////
+//  Author: Fran Rives  //
+//////////////////////////
+*/
+
+.content {
+    display: inline-block;
+    text-align: center;
+    margin-top: 83px; // The height of the floating header.
+    header:nth-child(1) {
+        margin-top: 47px;
+        img {
+            display: block; // So there's no margin from the image to the bottom of the header.
+            margin: 0 auto;
+        }
+    }
+}
+
+
+/*SHOWCASE SECTION*/
+
+.productCategories {
+    position: relative;
+    width: percentage(960 / 1004);
+    margin: 0 auto;
+    margin-top: 67px;
+    font-size: 14px;
+    button {
+        font-size: 14px;
+        color: $main;
+        &:visited {
+            color: $main;
+        }
+    }
+    button:nth-child(1) {
+        cursor: default;
+    }
+    button:nth-child(2) {
+        margin: 0 48px;
+    }
+    .underline {
+        position: absolute;
+        background-color: $main;
+        height: 2px;
+        top: 20.68px;
+    }
+}
+
+.products {
+    margin-top: 31px;
+    text-align: center;
+    & > button {
+        box-sizing: border-box;
+        overflow: hidden;
+        color: $almostWhite;
+        display: inline-block;
+        position: relative;
+        width: 222px;
+        height: 220px;
+        margin-right: 24px;
+        margin-top: 26px; // It would be 30px according to Photoshop but I had to use the .measure div to calculate the real distance (inline-block elements have small top and bottom margins, even when wrapping them in comments).
+        border: 4px solid $main;
+        &:nth-child(1),
+        &:nth-child(2) {
+            width: 468px;
+            height: 258px;
+            margin-top: 0;
+            .type {
+                width: 92px;
+                height: 27px;
+                font-size: 18px;
+            }
+            .name {
+                height: 38px;
+                width: 468px;
+                font-size: 24px;
+            }
+            img {
+                display: block;
+                width: 468px;
+            }
+        }
+        &:nth-child(2) {
+            margin-right: 0;
+        }
+        &:nth-child(4n+6) {
+            margin-right: 0;
+        }
+        img {
+            display: block;
+            width: 222px;
+        }
+        span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .type {
+            position: absolute;
+            left: -4px;
+            top: -4px;
+            width: 76px;
+            height: 23px;
+            background-color: $main;
+            font-family: 'PT Sans', sans-serif;
+            font-size: 15px;
+        }
+        .name {
+            position: absolute;
+            left: -4px;
+            bottom: -4px;
+            width: 222px;
+            height: 32px;
+            background-color: $main;
+            font-family: 'Alegreya', serif;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        &:hover {
+            border-color: $highlight1;
+            .type,
+            .name {
+                background-color: $highlight1;
+            }
+        }
+    }
+}
+
+
+/*VIDEOS SECTION*/
+
+.videos {
+    background-color: $highlight1;
+    margin-top: 139px - 4px; // To make for the inline-block element margin in the bottom.
+    .video {
+        position: relative;
+        display: inline-block;
+        width: 229px;
+        height: 156px;
+        background-position: center;
+        background-repeat: no-repeat;
+        & > h6 {
+            position: absolute;
+            width: 100%;
+            margin: 0;
+            font-style: italic;
+            font-size: 12px;
+            line-height: 20px; // By adjusting the line-height to be the same as the element's height, I vertically align the text to the center.
+            color: $almostWhite;
+            font-weight: normal;
+            height: 20px;
+            background-color: $highlight1;
+        }
+        & > button {
+            left: (229px - 62px) / 2; // Parent's width - element's width divided by 2.
+            top: (156px - 42px) / 2; // Parent's height - element's height divided by 2.
+            position: absolute;
+            width: 62px;
+            height: 42px;
+            background-color: rgba(22, 149, 163, 0.25);
+            transition: background-color 0.5s;
+            &:hover {
+                background-color: rgba(22, 149, 163, 0.75);
+            }
+        }
+        svg {
+            display: block; // So it doesn't have a bottom margin.
+            margin: 0 auto; // To align horizontally.
+            width: 26px;
+            height: 26px;
+            fill: $highlight1;
+        }
+    }
+    .video:nth-of-type(1) {
+        float: left;
+        background-image: url(../Videos/Thumbnail1.png);
+        & > h6 {
+            bottom: 0;
+        }
+    }
+    .video:nth-of-type(2) {
+        float: right;
+        background-image: url(../Videos/Thumbnail2.png);
+        & > h6 {
+            top: 0;
+        }
+    }
+    p {
+        display: inline-block;
+        position: relative;
+        width: 50%;
+        height: 156px;
+        text-align: justify;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0;
+        color: $almostWhite;
+        text-align: justify;
+        word-spacing: -5px; // To correct the default space around inline-block elements.
+        // To vertically align .centered inside p.
+        &:before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        .centered {
+            word-spacing: normal; // The actual text should have the normal word-spacing.
+            vertical-align: middle;
+            display: inline-block;
+            width: 100%;
+        }
+    }
+}
+
+
+/*TESTIMONIES SECTION*/
+
+.testimonies {
+    margin-top: 139px;
+    padding-bottom: 50px;
+    & > div {
+        display: inline-block;
+        img {
+            float: left;
+            width: 154px;
+            border: 4px solid $neutralBlueLight;
+            box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.75);
+        }
+        div {
+            display: inline-block;
+            float: left;
+            width: 228px;
+            height: 87px;
+            background-color: $neutralBlueDark;
+            font-family: 'Covered By Your Grace';
+            font-size: 20px;
+            color: $superHighlight;
+            padding: 3px 9px 0px 9px;
+            text-align: left;
+            span:nth-of-type(2) {
+                margin: 2px 25px;
+            }
+            span:nth-of-type(1),
+            span:nth-of-type(3) {
+                position: absolute;
+                font-size: 120px;
+            }
+            span:nth-of-type(1) {
+                top: -50px;
+                margin-left: -5px;
+            }
+            span:nth-of-type(3) {
+                top: 34px;
+                right: 10px;
+            }
+        }
+    }
+    & > div:nth-of-type(1) {
+        position: relative;
+        top: 50px;
+        & > div {
+            position: relative;
+            margin-top: 11px;
+        }
+    }
+    & > div:nth-of-type(2) {
+        position: relative;
+        margin-left: 108px;
+        & > div {
+            position: relative;
+            top: 154px - 87px; // The photo's height - the div's height.
+            margin-top: -21px;
+        }
+    }
+}

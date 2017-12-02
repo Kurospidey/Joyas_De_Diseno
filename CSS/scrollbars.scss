@@ -1,0 +1,128 @@
+/*
+//////////////////////////
+//  Author: Fran Rives  //
+//////////////////////////
+*/
+
+/*Vertical scrollbar.*/
+
+.vscroll {
+    position: absolute;
+    display: none;
+    right: 0;
+    z-index: 2;
+    width: 20px;
+    text-align: center;
+    .top {
+        position: absolute;
+        top: 0;
+        width: 20px;
+        height: 15px;
+        background-color: $neutralBlueLight;
+        padding: 0;
+        padding-top: 5px;
+        svg {
+            display: block;
+            fill: $almostWhite;
+            transform: rotate(180deg);
+            height: 5px;
+            width: 12px;
+            margin: 0 auto;
+        }
+        &:hover {
+            background-color: $neutralBlueDark;
+        }
+    }
+    .frame {
+        position: absolute;
+        right: 0;
+        width: 20px;
+        top: 15px;
+        display: inline-block;
+        background-color: $lightNeutral2;
+        .bar {
+            position: absolute;
+            display: inline-block;
+            width: 14px;
+            right: 3px;
+            background-color: $lightNeutral3;
+            &:hover {
+                background-color: $lightNeutral4;
+            }
+            &:active {
+                background-color: $lightNeutral5;
+            }
+        }
+    }
+    .bottom {
+        position: absolute;
+        bottom: 0;
+        width: 20px;
+        height: 15px;
+        background-color: $neutralBlueLight;
+        padding-top: 5px;
+        svg {
+            display: block;
+            fill: $almostWhite;
+            height: 5px;
+            width: 12px;
+            margin: 0 auto;
+        }
+        &:hover {
+            background-color: $neutralBlueDark;
+        }
+    }
+}
+
+
+/*Middle mouse button scroll.*/
+
+.mscroll {
+    position: absolute;
+    display: none; // Display inline-block on middle mouse button click.
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: 100px;
+    left: 350px;
+    background-color: rgba(13, 12, 11, 0.5);
+    .centered_square {
+        position: absolute;
+        display: inline-block;
+        z-index: 10;
+        width: 6px;
+        height: 6px;
+        top: 22px;
+        left: 22px;
+        background-color: $highlight2;
+    }
+    svg {
+        position: absolute;
+        display: inline-block;
+        z-index: 10;
+        width: 14px;
+        height: 7px;
+        margin: 0 auto;
+        fill: $almostWhite;
+    }
+    .bottom {
+        bottom: 7px;
+        left: 18px;
+    }
+    .top {
+        top: 7px;
+        left: 18px;
+        transform: rotate(180deg);
+    }
+    .left {
+        top: 22px;
+        left: 4px;
+        transform: rotate(90deg);
+    }
+    .right {
+        top: 22px;
+        right: 4px;
+        transform: rotate(-90deg);
+    }
+}

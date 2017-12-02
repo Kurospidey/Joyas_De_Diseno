@@ -1,0 +1,2 @@
+- Try to come up with solutions for the responsiveness of the site (different layouts for
+different resolutions using CSS media queries, but always stay responsive, not fluid).
