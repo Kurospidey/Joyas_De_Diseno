@@ -36,7 +36,6 @@ fieldset {
             display: block;
 
             input {
-                /*box-sizing: content-box;*/
                 display: inline-block;
                 width: 119px;
                 height: 19px;
@@ -51,7 +50,9 @@ fieldset {
                 font-family: 'Roboto';
 
                 &:focus {
+                    box-sizing: content-box;
                     border: 2px solid $highlight2;
+                    margin-left: 10px + 2px;
                 }
             }
         }

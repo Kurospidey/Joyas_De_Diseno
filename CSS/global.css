@@ -488,7 +488,6 @@ fieldset {
       margin: 0;
       display: block; }
       .advancedSearch .date label input {
-        /*box-sizing: content-box;*/
         display: inline-block;
         width: 119px;
         height: 19px;
@@ -502,7 +501,9 @@ fieldset {
         padding-top: 2.50px;
         font-family: 'Roboto'; }
         .advancedSearch .date label input:focus {
-          border: 2px solid #acf0f2; }
+          box-sizing: content-box;
+          border: 2px solid #acf0f2;
+          margin-left: 12px; }
 
 /*
 //////////////////////////
